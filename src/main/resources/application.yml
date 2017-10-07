@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+
+jwt:
+  header: Authorization
+  head: "Bearer "
+  secret: JwtTemplate
+  access_token:
+    expiration: 2592000000
+  refresh_token:
+    expiration: 25920000000
+
+---
+spring:
+  profiles: dev
+
+  datasource:
+    username: JwtTemplate
+    password: JwtTemplate
+    url: jdbc:mysql://localhost:3306/JWT_TEMPLATE
+    driver-class-name: com.mysql.jdbc.Driver
